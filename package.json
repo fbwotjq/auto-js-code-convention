@@ -13,7 +13,7 @@
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject",
     "precommit": "lint-staged",
-    "prepush": "npm test"
+    "prepush": "echo 'npm test'"
   },
   "devDependencies": {
     "@types/jest": "^23.3.10",
