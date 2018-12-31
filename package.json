@@ -13,7 +13,7 @@
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject",
     "precommit": "lint-staged",
-    "prepush": "echo 'npm test'"
+    "prepush": "cross-env NODE_ENV=test jest --env=jsdom --coverage"
   },
   "devDependencies": {
     "@types/jest": "^23.3.10",
@@ -27,12 +27,7 @@
     "typescript": "^3.2.2"
   },
   "lint-staged": {
-    "*.tsx": [
-      "tslint --fix",
-      "prettier --write --arrowParens avoid --useTabs false --tabWidth 2 --printWidth 80 --semi false --bracketSpacing true, --jsxBracketSameLine true --singleQuote true --parser typescript",
-      "git add"
-    ],
-    "*.ts": [
+    "*.{ts,tsx}": [
       "tslint --fix",
       "prettier --write --arrowParens avoid --useTabs false --tabWidth 2 --printWidth 80 --semi false --bracketSpacing true, --jsxBracketSameLine true --singleQuote true --parser typescript",
       "git add"
